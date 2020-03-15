@@ -3,7 +3,7 @@ package websocket
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/bitfinexcom/bitfinex-api-go/v2"
+	"github.com/venarius/bitfinex-api-go/v2"
 	"strings"
 	"sync"
 )

@@ -2,7 +2,7 @@ package rest
 
 import (
 	"bytes"
-	"github.com/bitfinexcom/bitfinex-api-go/v2"
+	"github.com/venarius/bitfinex-api-go/v2"
 	"io/ioutil"
 	"net/http"
 	"testing"

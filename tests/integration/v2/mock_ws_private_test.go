@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/bitfinexcom/bitfinex-api-go/v2"
-	"github.com/bitfinexcom/bitfinex-api-go/v2/websocket"
+	"github.com/venarius/bitfinex-api-go/v2"
+	"github.com/venarius/bitfinex-api-go/v2/websocket"
 )
 
 func TestAuthentication(t *testing.T) {

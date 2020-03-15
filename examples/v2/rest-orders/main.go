@@ -6,8 +6,8 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/bitfinexcom/bitfinex-api-go/v2"
-	"github.com/bitfinexcom/bitfinex-api-go/v2/rest"
+	"github.com/venarius/bitfinex-api-go/v2"
+	"github.com/venarius/bitfinex-api-go/v2/rest"
 )
 
 var (

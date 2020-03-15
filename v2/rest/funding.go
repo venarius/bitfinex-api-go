@@ -3,7 +3,7 @@ package rest
 import (
 	"path"
 
-	"github.com/bitfinexcom/bitfinex-api-go/v2"
+	"github.com/venarius/bitfinex-api-go/v2"
 )
 
 // LedgerService manages the Ledgers endpoint.

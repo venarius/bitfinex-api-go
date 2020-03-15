@@ -2,7 +2,7 @@ package rest
 
 import (
 	"fmt"
-	"github.com/bitfinexcom/bitfinex-api-go/v2"
+	"github.com/venarius/bitfinex-api-go/v2"
 	"net/url"
 	"path"
 	"strings"

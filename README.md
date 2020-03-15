@@ -1,6 +1,6 @@
 # Bitfinex Trading Library for GoLang  - Bitcoin, Ethereum, Ripple and more
 
-![https://api.travis-ci.org/bitfinexcom/bitfinex-api-go.svg?branch=master](https://api.travis-ci.org/bitfinexcom/bitfinex-api-go.svg?branch=master)
+![https://api.travis-ci.org/venarius/bitfinex-api-go.svg?branch=master](https://api.travis-ci.org/venarius/bitfinex-api-go.svg?branch=master)
 
 A Golang reference implementation of the Bitfinex API for both REST and websocket interaction.
 
@@ -13,13 +13,13 @@ A Golang reference implementation of the Bitfinex API for both REST and websocke
 ## Installation
 
 ``` bash
-go get github.com/bitfinexcom/bitfinex-api-go
+go get github.com/venarius/bitfinex-api-go
 ```
 
 Optional - run the 'trade-feed' example to begin receiving realtime trade updates via the websocket
 
 ```bash
-cd $GOPATH/src/github.com/bitfinexcom/bitfinex-api-go
+cd $GOPATH/src/github.com/venarius/bitfinex-api-go
 go run examples/v2/trade-feed/main.go
 ```
 
@@ -30,7 +30,7 @@ package main
 
 import (
     "fmt"
-    "github.com/bitfinexcom/bitfinex-api-go/v2"
+    "github.com/venarius/bitfinex-api-go/v2"
 )
 
 func main() {
@@ -69,7 +69,7 @@ func main() {
 #### Subscribe to Trades
 
 ``` go
-// using github.com/bitfinexcom/bitfinex-api-go/v2/websocket as client
+// using github.com/venarius/bitfinex-api-go/v2/websocket as client
 _, err := client.SubscribeTrades(context.Background(), "tBTCUSD")
 if err != nil {
     log.Printf("Could not subscribe to trades: %s", err.Error())
@@ -79,20 +79,20 @@ if err != nil {
 #### Get candles via REST
 
 ```go
-// using github.com/bitfinexcom/bitfinex-api-go/v2/rest as client
+// using github.com/venarius/bitfinex-api-go/v2/rest as client
 os, err := client.Orders.AllHistory()
 if err != nil {
     log.Fatalf("getting orders: %s", err)
 }
 ```
 
-See the <b>[examples](https://github.com/bitfinexcom/bitfinex-api-go/tree/master/examples)</b> directory for more, like:
+See the <b>[examples](https://github.com/venarius/bitfinex-api-go/tree/master/examples)</b> directory for more, like:
 
-- [Creating/updating an order](https://github.com/bitfinexcom/bitfinex-api-go/blob/master/examples/v2/ws-update-order/main.go)
-- [Subscribing to orderbook updates](https://github.com/bitfinexcom/bitfinex-api-go/blob/master/examples/v2/book-feed/main.go)
-- [Integrating a custom logger](https://github.com/bitfinexcom/bitfinex-api-go/blob/master/examples/v2/ws-custom-logger/main.go)
-- [Submitting funding offers](https://github.com/bitfinexcom/bitfinex-api-go/blob/master/examples/v2/rest-funding/main.go)
-- [Retrieving active positions](https://github.com/bitfinexcom/bitfinex-api-go/blob/master/examples/v2/rest-positions/main.go)
+- [Creating/updating an order](https://github.com/venarius/bitfinex-api-go/blob/master/examples/v2/ws-update-order/main.go)
+- [Subscribing to orderbook updates](https://github.com/venarius/bitfinex-api-go/blob/master/examples/v2/book-feed/main.go)
+- [Integrating a custom logger](https://github.com/venarius/bitfinex-api-go/blob/master/examples/v2/ws-custom-logger/main.go)
+- [Submitting funding offers](https://github.com/venarius/bitfinex-api-go/blob/master/examples/v2/rest-funding/main.go)
+- [Retrieving active positions](https://github.com/venarius/bitfinex-api-go/blob/master/examples/v2/rest-positions/main.go)
 
 ## FAQ
 
@@ -140,7 +140,7 @@ Order books with precision `R0` are considered 'raw' and contain entries for eac
 
 ## Contributing
 
-1. Fork it (https://github.com/bitfinexcom/bitfinex-api-go/fork)
+1. Fork it (https://github.com/venarius/bitfinex-api-go/fork)
 2. Create your feature branch (`git checkout -b my-new-feature)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

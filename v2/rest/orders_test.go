@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/bitfinexcom/bitfinex-api-go/v2"
+	"github.com/venarius/bitfinex-api-go/v2"
 )
 
 func TestOrdersAll(t *testing.T) {

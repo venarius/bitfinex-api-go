@@ -1,6 +1,6 @@
 # websocket
 --
-    import "github.com/bitfinexcom/bitfinex-api-go/v2/websocket"
+    import "github.com/venarius/bitfinex-api-go/v2/websocket"
 
 
 ## Usage

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
-	"github.com/bitfinexcom/bitfinex-api-go/v2/rest"
+	"github.com/venarius/bitfinex-api-go/v2/rest"
 )
 
 
