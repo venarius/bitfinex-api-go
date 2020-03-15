@@ -1642,8 +1642,8 @@ func NewBookUpdateFromRaw(symbol, precision string, data []interface{}, raw_numb
 	var px_num json.Number
 	var id, cnt int64
 	raw_num_array := raw_numbers.([]interface{})
-	amt := f64ValOrZero(data[2])
-	amt_num := floatToJsonNumber(raw_num_array[2])
+	amt := f64ValOrZero(data[3])
+	amt_num := floatToJsonNumber(raw_num_array[3])
 
 	var side OrderSide
 	var actionCtrl float64
