@@ -120,6 +120,24 @@ func (fs *FundingService) CreditsHistory(symbol string) (*bitfinex.FundingCredit
 	return loans, nil
 }
 
+// Retreive all of the past in-active credits used in positions
+// see https://docs.bitfinex.com/reference#rest-auth-funding-credits-hist for more info
+func (fs *FundingService) CreditsHistoryWithDate(symbol string, start int64, end int64) (*bitfinex.FundingCreditSnapshot, error) {
+	req, err := fs.requestFactory.NewAuthenticatedRequestWithData(bitfinex.PermissionRead, path.Join("funding/credits", symbol, "hist"), map[string]interface{}{"start": start, "end": end, "limit": 500})
+	if err != nil {
+		return nil, err
+	}
+	raw, err := fs.Request(req)
+	if err != nil {
+		return nil, err
+	}
+	loans, err := bitfinex.NewFundingCreditSnapshotFromRaw(raw)
+	if err != nil {
+		return nil, err
+	}
+	return loans, nil
+}
+
 // Retreive all of the matched funding trades
 // see https://docs.bitfinex.com/reference#rest-auth-funding-trades-hist for more info
 func (fs *FundingService) Trades(symbol string) (*bitfinex.FundingTradeSnapshot, error) {
