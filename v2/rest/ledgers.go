@@ -22,9 +22,9 @@ func (s *LedgerService) Ledgers(currency string, start int64, end int64, max int
 	var req Request
 	var err error
 	if category != 0 {
-		req, err = s.requestFactory.NewAuthenticatedRequestWithData(bitfinex.PermissionRead, path.Join("ledgers", currency, "hist"), map[string]interface{}{"start": start, "end": end, "limit": max})
-	} else {
 		req, err = s.requestFactory.NewAuthenticatedRequestWithData(bitfinex.PermissionRead, path.Join("ledgers", currency, "hist"), map[string]interface{}{"start": start, "end": end, "limit": max, "category": category})
+	} else {
+		req, err = s.requestFactory.NewAuthenticatedRequestWithData(bitfinex.PermissionRead, path.Join("ledgers", currency, "hist"), map[string]interface{}{"start": start, "end": end, "limit": max})
 	}
 	if err != nil {
 		return nil, err
