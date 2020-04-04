@@ -29,7 +29,7 @@ func (u *EpochNonceGenerator) GetNonce() string {
 
 func NewEpochNonceGenerator() *EpochNonceGenerator {
 	return &EpochNonceGenerator{
-		nonce: uint64(time.Now().Unix()) * 8640000,
+		nonce: uint64(time.Now().Unix()) * 10000000,
 	}
 }
 
@@ -38,7 +38,7 @@ func NewEpochNonceGenerator() *EpochNonceGenerator {
 var nonce uint64
 
 func init() {
-	nonce = uint64(time.Now().UnixNano()) * 8640000
+	nonce = uint64(time.Now().UnixNano()) * 10000000
 }
 
 // GetNonce is a naive nonce producer that takes the current Unix nano epoch
