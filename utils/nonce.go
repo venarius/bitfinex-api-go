@@ -22,14 +22,12 @@ type EpochNonceGenerator struct {
 // key and as such needs to be synchronised with other instances using the same
 // key in order to avoid race conditions.
 func (u *EpochNonceGenerator) GetNonce() string {
-	str := strconv.FormatUint(atomic.AddUint64(&u.nonce, 1), 10)
-	println(str)
-	return str
+	return strconv.FormatUint(atomic.AddUint64(&u.nonce, 1), 10)
 }
 
 func NewEpochNonceGenerator() *EpochNonceGenerator {
 	return &EpochNonceGenerator{
-		nonce: uint64(time.Now().Unix()) * 10000000,
+		nonce: uint64(time.Now().Unix()) * 1000,
 	}
 }
 
@@ -38,7 +36,7 @@ func NewEpochNonceGenerator() *EpochNonceGenerator {
 var nonce uint64
 
 func init() {
-	nonce = uint64(time.Now().UnixNano()) * 10000000
+	nonce = uint64(time.Now().UnixNano()) * 1000
 }
 
 // GetNonce is a naive nonce producer that takes the current Unix nano epoch
