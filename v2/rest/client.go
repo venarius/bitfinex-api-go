@@ -163,7 +163,12 @@ func (c *Client) NewAuthenticatedRequest(permissionType bitfinex.PermissionType,
 // For example permissionType = "r" and refUrl = "/orders" then the target endpoint will be
 // https://api.bitfinex.com/v2/auth/r/orders/:Symbol
 func (c *Client) NewAuthenticatedRequestWithBytes(permissionType bitfinex.PermissionType, refURL string, data []byte) (Request, error) {
-	authURL := fmt.Sprintf("auth/%s/%s", string(permissionType), refURL)
+	var authURL = ""
+	if string(permissionType) != "" {
+		authURL = fmt.Sprintf("auth/%s/%s", string(permissionType), refURL)
+	} else {
+		authURL = fmt.Sprintf("auth/%s", refURL)
+	}
 	req := NewRequestWithBytes(authURL, data)
 	nonce := c.nonce.GetNonce()
 	msg := "/api/v2/" + authURL + nonce + string(data)
