@@ -34,7 +34,7 @@ func (s *WalletService) SetCollateral(symbol string, amount float64) (bool, erro
 	}
 	item := raw[0].([]interface{})
 	// [1] == success, [] || [0] == false
-	if len(item) > 0 && item[0].(int) == 1 {
+	if len(item) > 0 && item[0].(float64) == 1 {
 		return true, nil
 	}
 	return false, nil
